@@ -221,8 +221,10 @@ PRODUCT_PACKAGES += \
     rsync
 
 # Storage manager
+ifeq ($(WITH_GMS),false)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
+endif
 
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \
