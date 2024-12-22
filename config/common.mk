@@ -9,13 +9,13 @@ $(call inherit-product, vendor/parasite/common/config.mk)
 
 PRODUCT_BRAND ?= LineageOS
 
-ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.com.google.clientidbase=android-google
-else
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
-endif
+# ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
+# PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#     ro.com.google.clientidbase=android-google
+# else
+# PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
+# endif
 
 ifeq ($(PRODUCT_IS_ATV),true)
 ifeq ($(PRODUCT_ATV_CLIENTID_BASE),)
@@ -114,12 +114,12 @@ include vendor/lineage/config/lineage_sdk_common.mk
 endif
 
 # Do not include art debug targets
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+# PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # Strip the local variable table and the local variable type table to reduce
 # the size of the system image. This has no bearing on stack traces, but will
 # leave less information available via JDWP.
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+# PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Enable whole-program R8 Java optimizations for SystemUI and system_server,
 # but also allow explicit overriding for testing and development.
@@ -137,9 +137,9 @@ endif
 # Bootanimation
 TARGET_SCREEN_WIDTH ?= 1080
 TARGET_SCREEN_HEIGHT ?= 1920
-PRODUCT_PACKAGES += \
-    bootanimation.zip \
-    bootanimation-dark.zip
+# PRODUCT_PACKAGES += \
+#     bootanimation.zip \
+#     bootanimation-dark.zip
 
 # Lineage packages
 ifeq ($(PRODUCT_IS_ATV),)
@@ -163,8 +163,8 @@ PRODUCT_COPY_FILES += \
 
 # Config
 PRODUCT_PACKAGES += \
-    SimpleDeviceConfig \
     SimpleSettingsConfig
+#    SimpleDeviceConfig \
 
 # Extra tools in Lineage
 PRODUCT_PACKAGES += \
@@ -261,9 +261,9 @@ endif
 $(call inherit-product, vendor/lineage/audio/audio.mk)
 
 # SetupWizard
-PRODUCT_PRODUCT_PROPERTIES += \
-    setupwizard.theme=glif_v4 \
-    setupwizard.feature.day_night_mode_enabled=true
+# PRODUCT_PRODUCT_PROPERTIES += \
+#     setupwizard.theme=glif_v4 \
+#     setupwizard.feature.day_night_mode_enabled=true
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay/no-rro
 PRODUCT_PACKAGE_OVERLAYS += \
