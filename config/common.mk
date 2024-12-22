@@ -1,3 +1,6 @@
+# Parasite Configurations
+$(call inherit-product, vendor/parasite/common/config.mk)
+
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
