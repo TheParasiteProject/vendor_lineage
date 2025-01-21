@@ -42,4 +42,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.custom.version=$(LINEAGE_VERSION) \
     ro.custom.display.version=$(LINEAGE_DISPLAY_VERSION) \
     ro.custom.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
+    ro.custom.sdk.build.version?=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
     ro.custom.releasetype=$(LINEAGE_BUILDTYPE)
