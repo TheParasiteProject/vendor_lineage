@@ -276,9 +276,9 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/lineage/overlay/no-rro
 
 PRODUCT_PACKAGES += \
-    DocumentsUIOverlay \
-    NetworkStackOverlay \
-    PermissionControllerOverlay
+    NetworkStackOverlay
+    # DocumentsUIOverlay \
+    # PermissionControllerOverlay
 
 # Translations
 CUSTOM_LOCALES += \
