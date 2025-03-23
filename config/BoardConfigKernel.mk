@@ -116,6 +116,12 @@ endif
 # Clear this first to prevent accidental poisoning from env
 KERNEL_MAKE_FLAGS :=
 
+# Use privacy safe default values for kernel build
+KERNEL_MAKE_FLAGS += \
+    KBUILD_BUILD_TIMESTAMP="$(shell date -u)" \
+    KBUILD_BUILD_USER="build-user" \
+    KBUILD_BUILD_HOST="build-host"
+
 # Add back threads, ninja cuts this to $(getconf _NPROCESSORS_ONLN)/2
 KERNEL_MAKE_FLAGS += -j$(shell getconf _NPROCESSORS_ONLN)
 
