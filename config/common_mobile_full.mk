@@ -32,10 +32,10 @@ PRODUCT_PACKAGES += \
     zstd
 
 # Fonts
-PRODUCT_PACKAGES += \
-    fonts_customization.xml \
-    FontLatoOverlay \
-    FontRubikOverlay
+# PRODUCT_PACKAGES += \
+#     fonts_customization.xml \
+#     FontLatoOverlay \
+#     FontRubikOverlay
 
 # Include Lineage LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/dictionaries
