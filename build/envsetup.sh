@@ -95,8 +95,7 @@ function eat()
 
 function omnom()
 {
-    brunch $*
-    eat
+    brunch "$@" && eat
 }
 
 function cout()
