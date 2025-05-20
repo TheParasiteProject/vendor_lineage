@@ -256,6 +256,9 @@ def main():
         help="reset to initial state (abort cherry-pick) if there is a conflict",
     )
     parser.add_argument(
+        "-R", "--remote", metavar="", help="use the specified remote for the change"
+    )
+    parser.add_argument(
         "-a",
         "--abandon-first",
         action="store_true",
@@ -661,7 +664,10 @@ def do_git_fetch_pull(args, item):
         if args.verbose:
             print("Trying to fetch the change from GitHub")
 
-        cmd[-2] = "github"
+        if args.remote:
+            cmd[-2] = args.remote
+        else:
+            cmd[-2] = "github"
         if not args.quiet:
             print(cmd)
         result = subprocess.call(cmd, cwd=project_path)
