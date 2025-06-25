@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.systemui"
+  name: "disable_shade_visible_with_blur"
+  state: ENABLED
+  permission: READ_ONLY
+}
