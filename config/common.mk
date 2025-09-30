@@ -163,6 +163,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
 
+PRODUCT_PRODUCT_PROPERTIES += \
+    lineage.updater.allow_major_upgrades?=true \
+    lineage.updater.allow_downgrading?=false
+
 # Config
 PRODUCT_PACKAGES += \
     SimpleSettingsConfig
